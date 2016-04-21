@@ -9,7 +9,7 @@ ghJob.controller('ghJobController',  ['$http', function($http){
       .then(function(resp){
         _handleResponseFromApi(resp.data);
       }, function(err){});
-      return self.users; 
+      return self.users;
   };
 
   function _handleResponseFromApi(data) {
@@ -17,7 +17,5 @@ ghJob.controller('ghJobController',  ['$http', function($http){
       self.users.push(userData);
     });
   }
-
-  self.getAll();
 
 }]);

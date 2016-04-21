@@ -1,21 +1,16 @@
-ghJob.controller('ghJobController',  ['$http', function($http){
+ghJob.controller('ghJobController',  ['ghJobService', function(ghJobService){
 
   var self = this;
+	
+  ghJobService.getAll().then(function(users){
+    self.users = users;
+  });
 
-  self.users = [];
+  self.searchUserFor = function(searchTerm) {
+    var apiCall = ghJobService.setApiCall(searchTerm)
 
-  self.getAll = function() {
-    return $http.get("https://api.github.com/orgs/makersacademy/public_members")
-      .then(function(resp){
-        _handleResponseFromApi(resp.data);
-      }, function(err){});
-      return self.users
-  }
-
-  function _handleResponseFromApi(data) {
-    data.forEach(function(userData){
-      self.users.push(userData);
-    })
-  }
-
+    ghJobService.getAll(apiCall).then(function(users){
+    self.users = users;
+    });
+  };   
 }]);

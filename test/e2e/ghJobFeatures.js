@@ -17,6 +17,7 @@ describe('ghJob', function() {
 
   it ('displays a list of users', function() {
     var users = $$('#users p');
+    browser.pause();
     expect(users.first().getText()).toEqual('paulalexrees');
     expect(users.last().getText()).toEqual('kevinpmcc');
   });
@@ -26,6 +27,11 @@ describe('ghJob', function() {
     var button = element(by.id('searchbutton'));
     expect(field.isPresent()).toBeTruthy();
     expect(button.isPresent()).toBeTruthy();
+  });
+
+  it ('displays an avatar for a user', function() {
+    var images = $$('#users img');
+    expect(images.first().isPresent()).toBeTruthy();
   });
 
   var mockData = [

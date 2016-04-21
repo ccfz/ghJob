@@ -1,16 +1,16 @@
 describe('ghJob', function() {
-  it ('has a title', function(){
+  
+  beforeEach(function(){
     browser.get('/');
-    expect(browser.getTitle()).toEqual("Title");
   });
 
-  it('displays a list of github users', function() {
-
-
+  it ('displays a list of users', function() {
+    var users = $$('#users p');
+    expect(users.first().getText()).toEqual('paulalexrees');
+    expect(users.last().getText()).toEqual('kevinpmcc');
   });
 
   it ('has a search field with a search button', function() {
-    browser.get('/');
     var field = element(by.id('searchfield'));
     var button = element(by.id('searchbutton'));
     expect(field.isPresent()).toBeTruthy();

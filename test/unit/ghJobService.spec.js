@@ -24,7 +24,7 @@ describe('ghJobService', function(){
 
   });
 
-  it('search by userName', function(){    
-      expect(ghJobService.searchUsersFor("user1")).toEqual("https://api.github.com/search/users?q=user1");
+  it('search by userName', function(){
+    expect(ghJobService.setApiCall("user1")).toEqual("/search/users?q=user1");
   });
 })

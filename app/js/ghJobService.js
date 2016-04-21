@@ -12,14 +12,14 @@ ghJob.service('ghJobService', ['$http', function($http) {
       return self.users
   }
 
-  self.searchUsersFor= function(user){
-    return "https://api.github.com/search/users?q="+user
-  };
-
   function _handleResponseFromApi(data) {
     data.forEach(function(userData){
       self.users.push(userData);
     })
   }
-  
+
+  self.setApiCall= function(user){
+    return "/search/users?q="+user
+  };
+
 }])

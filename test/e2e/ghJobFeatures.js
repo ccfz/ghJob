@@ -35,10 +35,11 @@ describe('ghJob', function() {
   });
 
   it ('displays followers', function() {
-    var followersNumber = $$('#users span');
+    var followersNumber = element( by.repeater('user in ctrl.users').row(0).column('followers'));
     var firstUserFollowers = mockData[0].followers;
-    expect(followersNumber.first().getText()).toEqual(firstUserFollowers.toString());
+    expect(followersNumber.getText()).toEqual(firstUserFollowers.toString());
   });
+  
 
   var mockData = [
     {

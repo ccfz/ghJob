@@ -1,7 +1,7 @@
 ghJob.controller('ghJobController',  ['$http', function($http){
 
   var self = this;
-	
+
   self.users = [];
 
   self.getAll = function() {

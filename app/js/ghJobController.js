@@ -18,4 +18,6 @@ ghJob.controller('ghJobController',  ['$http', function($http){
     })
   }
 
+  self.getAll();
+
 }]);

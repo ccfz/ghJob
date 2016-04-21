@@ -9,13 +9,13 @@ ghJob.controller('ghJobController',  ['$http', function($http){
       .then(function(resp){
         _handleResponseFromApi(resp.data);
       }, function(err){});
-      return self.users;
+      return self.users
   };
 
   function _handleResponseFromApi(data) {
     data.forEach(function(userData){
       self.users.push(userData);
-    });
+    })
   }
 
 }]);

@@ -1,0 +1,1 @@
+var ghJob = angular.module('ghJob', []);

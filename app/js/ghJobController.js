@@ -1,6 +1,8 @@
 ghJob.controller('ghJobController',  ['ghJobService', function(ghJobService){
 
   var self = this;
+
+
 	
   ghJobService.getAll().then(function(users){
     self.users = users;

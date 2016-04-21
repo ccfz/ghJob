@@ -28,6 +28,12 @@ describe('ghJob', function() {
     expect(button.isPresent()).toBeTruthy();
   });
 
+  it ('displays an avatar for a user', function() {
+    var images = $$('#users img');
+    var firstUserAvatar = mockData[0].avatar_url;
+    expect(images.first().getAttribute("src")).toEqual(firstUserAvatar);
+  });
+
   var mockData = [
     {
       "login": "paulalexrees",

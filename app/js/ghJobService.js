@@ -9,7 +9,7 @@ ghJob.service('ghJobService', ['$http', function($http) {
       .then(function(resp){
         _handleResponseFromApi(resp.data);
       }, function(err){});
-      _userProfile(self.users)
+     return _userProfile(self.users)
   }
 
   function _handleResponseFromApi(data) {

@@ -27,4 +27,6 @@ describe('ghJobService', function(){
   it('search by userName', function(){
     expect(ghJobService.setApiCall("user1")).toEqual("/search/users?q=user1");
   });
+
+  
 })

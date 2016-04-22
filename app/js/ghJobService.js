@@ -1,7 +1,7 @@
 ghJob.service('ghJobService', ['$http', function($http) {
   var self =this;
 
-  self.users = [];
+
 
   self.getAll = function(filter = "orgs/makersacademy/public_members") {
     self.users = [];
@@ -9,7 +9,7 @@ ghJob.service('ghJobService', ['$http', function($http) {
       .then(function(resp){
         _handleResponseFromApi(resp.data);
       }, function(err){});
-      return self.users
+     return _userProfile(self.users)
   }
 
   function _handleResponseFromApi(data) {
@@ -21,5 +21,17 @@ ghJob.service('ghJobService', ['$http', function($http) {
   self.setApiCall= function(user){
     return "/search/users?q="+user
   };
+
+  function _userProfile(data){
+    var foundUsers = [];
+    data.forEach(function(data){
+      return $http.get("https://api.github.com/users/"+data.login) 
+        .then(function(resp){
+          foundUsers.push(resp.data);
+      }, function(err){}); 
+      return foundUsers    
+    })
+
+  }
 
 }])

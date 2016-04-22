@@ -16,6 +16,9 @@
     <div id="users" ng-controller="ghJobController as ctrl">
       <div ng-repeat="user in ctrl.users">
         <p>{{ user.login }}</p>
+        <span>
+           {{ user.followers }}
+        </span>
         <img src = "{{ user.avatar_url }}" style="height:100px; width:100px;" >
       </div>
     </div>

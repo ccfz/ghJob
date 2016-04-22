@@ -34,6 +34,13 @@ describe('ghJob', function() {
     expect(images.first().getAttribute("src")).toEqual(firstUserAvatar);
   });
 
+  it ('displays followers', function() {
+    var followersNumber = element( by.repeater('user in ctrl.users').row(0).column('followers'));
+    var firstUserFollowers = mockData[0].followers;
+    expect(followersNumber.getText()).toEqual(firstUserFollowers.toString());
+  });
+  
+
   var mockData = [
     {
       "login": "paulalexrees",
@@ -107,7 +114,4 @@ describe('ghJob', function() {
       "updated_at": "2016-03-26T13:00:18Z"
     }
   ];
-
-
-
 });

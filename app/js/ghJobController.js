@@ -13,4 +13,5 @@ ghJob.controller('ghJobController',  ['ghJobService', function(ghJobService){
     self.users = users;
     });
   };   
+
 }]);

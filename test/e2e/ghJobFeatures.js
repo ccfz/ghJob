@@ -16,7 +16,10 @@ describe('ghJob', function() {
   });
 
   it ('displays a list of users', function() {
+    var x = $$('.users');
+    console.log(x);
     var users = $$('#users p');
+    expect(x.login).toEqual('bobby');
     expect(users.first().getText()).toEqual('paulalexrees');
     expect(users.last().getText()).toEqual('kevinpmcc');
   });

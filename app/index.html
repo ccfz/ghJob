@@ -5,6 +5,7 @@
   <script src="bower_components/angular/angular.js"></script>
   <script src="js/app.js"></script>
   <script src="js/ghJobController.js"></script>
+  <script src="js/factories/ghJobFactory.js"></script>
   <title>Title</title>
 
 </head>
@@ -13,7 +14,7 @@
       <input id='searchfield' type='text' placeholder='Search by name'>
       <button id='searchbutton'>Search</button>
     </form>
-    <div id="users" ng-controller="ghJobController as ctrl">
+    <div ="users" id="users" ng-controller="ghJobController as ctrl">
       <div ng-repeat="user in ctrl.users">
         <p>{{ user.login }}</p>
         <span>
@@ -22,5 +23,6 @@
         <img src = "{{ user.avatar_url }}" style="height:100px; width:100px;" >
       </div>
     </div>
+    </ul>
   </body>
 </html>

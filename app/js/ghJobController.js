@@ -4,6 +4,7 @@ ghJob.controller('ghJobController',  ['ghJobFactory', function(ghJobFactory){
 
   ghJobFactory.getAll(function(users){
     self.users = users;
+    console.log(users);
   });
 
   //self.searchUserFor = function(searchTerm) {

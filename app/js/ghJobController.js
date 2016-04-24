@@ -2,7 +2,7 @@ ghJob.controller('ghJobController',  ['ghJobFactory', function(ghJobFactory){
 
   var self = this;
 
-  ghJobFactory.getAll().then(function(users){
+  ghJobFactory.getAll(function(users){
     self.users = users;
   });
 
@@ -12,6 +12,6 @@ ghJob.controller('ghJobController',  ['ghJobFactory', function(ghJobFactory){
     //ghJobService.getAll(apiCall).then(function(users){
     //self.users = users;
     //});
-  //};   
+  //};
 
 }]);
